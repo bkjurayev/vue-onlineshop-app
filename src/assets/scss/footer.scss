@@ -1,0 +1,148 @@
+.footer {
+	border-top: 1px solid #D8D8D8; 
+	&__container {
+	}
+
+	&__column {
+		min-height: 367px;
+		display: flex;
+		flex-wrap: wrap;
+		@include adaptiv-value("padding-top", 80, 30, 1);
+		@include adaptiv-value("padding-bottom", 20, 15, 1);		
+	}
+
+	&__item {
+		display: flex;
+		flex-wrap: wrap;
+		flex-direction: column;
+		flex: 1 1 auto;
+		@media (max-width: $md3+px) {
+			flex: 1 1 20%;
+			margin-top: 15px;
+		}
+		@media (max-width: $md4+px) {
+			flex: 1 1 50%;
+		}
+	}
+	&__title {
+		color: #000;
+		margin-bottom: 14px;		
+		font-weight: 700;
+		line-height: 30/24 * 100%;
+		@include adaptiv-value("font-size", 24, 14, 1);
+	}
+	a {
+		color: $grayColor;				
+		font-weight: 500;
+		line-height: 28/14 * 100%;
+		@include adaptiv-value("font-size", 16, 12, 1);
+		@media (any-hover: hover) {
+			&:hover {
+				color: $orangeHover;
+			}
+		}
+	}
+}
+
+.footer-info {
+	@include adaptiv-value("padding-right", 85, 40, 1);	
+	@media (min-width: $md3+px) {
+		flex: 0 1 329/1240 * 100%;	
+	}
+	@media (max-width: $md3+px) {
+		flex: 0 1 50%;	
+	}
+	@media (max-width: $md4+px) {
+		flex: 0 1 100%;	
+	}
+
+	&__description {
+		color: $grayColor;		
+		font-weight: 400;		
+		line-height: 24/14 * 100%;
+		@include adaptiv-value("font-size", 16, 12, 1);
+	}
+
+	&__location{
+		@include adaptiv-value("font-size", 16, 12, 1);
+	}
+
+	&__call {
+
+	}
+
+	&__link {
+	}
+	.footer-info__icon {
+		margin-right: 8px;
+	}
+}
+.icon-location {
+}
+.icon-phone {
+}
+.footer-menu {
+
+	&__list {
+	}
+
+	&__link {
+	}
+}
+.footer-accounts {
+}
+.footer-social {
+
+	&__facebook {
+	}
+
+	&__instagram {
+	}
+
+	&__twitter {
+	}
+}
+.footer-form {
+	flex: 0 1 292/1240 * 100%;		
+	@media (max-width: $md3+px) {
+		flex: 1 1 50%;				
+	}
+	@media (max-width: $md4+px) {
+		flex: 1 1 100%;				
+	}
+	&__body {
+		height: 45px;
+		display: flex;
+		align-items: center;
+	}
+	&__input {
+		padding: 10px 14px;
+		width: 100%;
+		height: 100%;		
+		font-weight: 400;
+		line-height: 24/16 * 100%;
+		background-color: #F4F5F7;
+		@include adaptiv-value("font-size", 16, 12, 1);
+	}
+	&__icon {
+		width: 50px;		
+		height: 100%;
+		margin-left: 4px;
+		color: #fff;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background-color: $orangeColor;
+		@media (any-hover: hover) {
+			&:hover {
+				background-color: $orangeHover;
+			}
+		}
+	}
+}
+.icon-telegram {
+}
+
+//====================================================================================================
+
+//====================================================================================================
