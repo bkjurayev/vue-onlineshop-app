@@ -17,16 +17,26 @@ export default createStore({
     createToCart(state, data) {
       if (!state.cart.find(item => item.id === data.id)) {
         state.cart.push(data)
-      }
+      }  
     },
     incQuantityCart(state, data) {
-      state.cart = state.cart.map(item => {
-        if (item.id === data.id) {
-          item.quantity = item.quantity + 1 
+      state.cart = state.cart.map(item => {        
+        if (item.id == data) {
+          item.quantity++
         }
+        return item
+      })
+    },
+    decQuantityCart(state, data) {
+      state.cart = state.cart.map(item => {        
+        if (item.id == data) {
+          item.quantity--
+        }
+        return item
       })
     },
     removeFromCart(state, data) {
+      console.log(data);
       state.cart = state.cart.filter(item => item.id != data.id)
     },
     createToFavorite(state, fav) {

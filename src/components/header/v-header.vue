@@ -16,6 +16,7 @@
 									<li class="menu__item">
 										<router-link 
 											:to="{name: 'Products', params: {slug: 'woman'}}" 										
+											@click="showMenuBurger = !showMenuBurger"
 											class="menu__link"
 										>
 											Ayollar
@@ -24,6 +25,7 @@
 									<li class="menu__item">
 										<router-link 
 											:to="{name: 'Products', params: {slug: 'man'}}" 										
+											@click="showMenuBurger = !showMenuBurger"
 											class="menu__link"
 										>
 											Erkaklar
@@ -32,6 +34,7 @@
 									<li class="menu__item">
 										<router-link 
 											:to="{name: 'Products', params: {slug: 'children'}}" 										
+											@click="showMenuBurger = !showMenuBurger"
 											class="menu__link"
 										>
 											Bolalar
@@ -81,12 +84,12 @@
 						</div>
 					</div>
 					<div class="header__actions">
-						<VFavorite/>
+						<!-- <VFavorite/> -->
 						
 						<VCart/>
 
 						<div class="header__actions__item user">
-							<a href=""><img :src="require('../../assets/img/avatar.jpg')" alt="" /></a>
+							<router-link to="/"><img :src="require('../../assets/img/avatar.jpg')" alt="" /></router-link>
 						</div>
 					</div>
 					<div class="header__menu-icon">

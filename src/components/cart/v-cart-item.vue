@@ -33,7 +33,7 @@
 		<p>{{ product.price * quantity }}</p>
 	</div>
 	<div class="product-cart__remove">
-		<span @click="removeFromCart(product), removePrice(totalPrice)"
+		<span @click="removeFromCart(product), onRemovePrice(totalPrice)"
 			>Delate</span
 		>
 	</div>
@@ -52,7 +52,7 @@ export default {
 			type: Object,
 			require: true,
 		},
-	},
+	}, 
 	data() {
 		return {
 			quantity: 1,
@@ -64,21 +64,22 @@ export default {
 	},
 	emits: ['removePrice', 'inc', 'dec'],
 	methods: {
-		...mapMutations(["removeFromCart", "incQuantityCart"]),		
-		removePrice(data) {
+		...mapMutations(["removeFromCart", "incQuantityCart", "decQuantityCart"]),		
+		onRemovePrice(data) {
 			this.$emit("removePrice", data);
 		},
 		increment() {
 			this.quantity += 1;
 			this.totalPrice += this.product.price;
 			this.$emit("inc", this.product.price);
-			this.incQuantityCart(this.product.id)
+			this.incQuantityCart(this.product.id);
 		},
 		decrement() {
 			if (this.quantity > 1) {
 				this.quantity -= 1;
 				this.totalPrice -= this.product.price;
 				this.$emit("dec", this.product.price);
+				this.decQuantityCart(this.product.id);
 			}
 		},
 	},

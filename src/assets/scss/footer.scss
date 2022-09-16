@@ -1,8 +1,5 @@
 .footer {
 	border-top: 1px solid #D8D8D8; 
-	&__container {
-	}
-
 	&__column {
 		min-height: 367px;
 		display: flex;
@@ -10,7 +7,6 @@
 		@include adaptiv-value("padding-top", 80, 30, 1);
 		@include adaptiv-value("padding-bottom", 20, 15, 1);		
 	}
-
 	&__item {
 		display: flex;
 		flex-wrap: wrap;
@@ -29,13 +25,13 @@
 		margin-bottom: 14px;		
 		font-weight: 700;
 		line-height: 30/24 * 100%;
-		@include adaptiv-value("font-size", 24, 14, 1);
+		@include adaptiv-value("font-size", 26, 22, 16);
 	}
 	a {
 		color: $grayColor;				
 		font-weight: 500;
 		line-height: 28/14 * 100%;
-		@include adaptiv-value("font-size", 16, 12, 1);
+		@include adaptiv-value("font-size", 20, 18, 8);
 		@media (any-hover: hover) {
 			&:hover {
 				color: $orangeHover;
@@ -43,7 +39,6 @@
 		}
 	}
 }
-
 .footer-info {
 	@include adaptiv-value("padding-right", 85, 40, 1);	
 	@media (min-width: $md3+px) {
@@ -55,51 +50,33 @@
 	@media (max-width: $md4+px) {
 		flex: 0 1 100%;	
 	}
-
 	&__description {
 		color: $grayColor;		
 		font-weight: 400;		
 		line-height: 24/14 * 100%;
-		@include adaptiv-value("font-size", 16, 12, 1);
+		@include adaptiv-value("font-size", 18, 14, 10);
 	}
-
 	&__location{
 		@include adaptiv-value("font-size", 16, 12, 1);
 	}
-
 	&__call {
-
 	}
-
 	&__link {
 	}
 	.footer-info__icon {
 		margin-right: 8px;
 	}
 }
-.icon-location {
-}
-.icon-phone {
-}
 .footer-menu {
-
 	&__list {
 	}
-
 	&__link {
 	}
 }
 .footer-accounts {
 }
 .footer-social {
-
-	&__facebook {
-	}
-
-	&__instagram {
-	}
-
-	&__twitter {
+	&__facebook, &__instagram, &__twitter {
 	}
 }
 .footer-form {

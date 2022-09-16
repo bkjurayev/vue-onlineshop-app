@@ -33,7 +33,9 @@ const route = useRoute()
 <style lang="scss">
 	.breadcrumbs {
 		color: #3A3A3A;		
+		margin-bottom: 40px;
 		&__item {
+			font-size: 18px;
 			position: relative;
 			display: inline-flex;
 		}

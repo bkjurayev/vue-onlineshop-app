@@ -28,7 +28,7 @@
 			</div>			
 		</div>
 		<div class="cart__contact contact">
-			<h1 class="contact__title">3. Contact Info</h1>
+			<h1 class="contact__title">3. Bog'lanish</h1>
 			<div class="contact__input">
 				<label for="name">Ism</label>
 				<input type="text" name="name" v-model="inputName">
@@ -100,7 +100,7 @@ export default {
 			if (this.inputName && this.inputSurname && this.inputPhone && this.delevery) {
 				this.loading = true;
 				const res = this.getProductFromCart.map(item => {
-					return `<b>ID:</b>${item.id} <b>Title:</b>${item.title} <b>Price:</b>${item.price} <b>Select color:</b>${item.selectedColor} <b>Select size:</b>${item.selectedSize} <b>Gender:</b>${item.gender}`						
+					return `<b>ID:</b>${item.id} <b>Title:</b>${item.title} <b>Price:</b>${item.price} <b>Quantity:</b>${item.quantity} <b>Select color:</b>${item.selectedColor} <b>Select size:</b>${item.selectedSize} <b>Gender:</b>${item.gender}`						
 				})	
 				axios
 					.post(this.URI_API, {
@@ -122,88 +122,3 @@ export default {
 	},
 };
 </script>
-
-
-<style lang="scss" scope>
-.cart {
-	padding-top: 150px;
-	&__title,
-	.delivery__title,
-	.contact__title,
-	.pay__title {
-		margin: 30px 0;
-		font-size: 38px;
-		font-weight: 800;
-	}
-	&__subtotal {
-		margin: 20px 0;
-		font-size: 24px;
-		font-weight: 700;
-		display: flex;
-		color: black;
-		justify-content: flex-end;
-	}
-	&__btn {
-		margin: 15px 0 50px 0;
-		cursor: pointer;
-	}
-}
-.product-cart {
-	color: black;
-	font-weight: 600;
-	padding: 4px 10px;
-	margin-bottom: 15px;
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	border: 1px solid rgb(209, 209, 209);
-	&__title {
-		font-size: 24px;
-	}
-	&__img {
-		img {
-			max-width: 150px;
-		}
-	}
-	&__remove {
-		color: rgb(77, 0, 0);
-	}
-}
-.delivery {
-	&__item {
-		color: black;
-		font-size: 18px;
-		font-weight: 600;
-		margin-bottom: 10px;
-		label {
-			margin-left: 10px;
-		}
-	}	
-	&__description {
-		width: 50%;
-		padding-top: 20px;
-		color: black;
-		line-height: 20px;
-	}
-}
-.contact {
-	width: max-content;
-	&__input {
-		margin: 20px 0;
-		padding-left: 30px;
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-		label {
-			color: #000;
-			margin-right: 10px;
-		}
-		input {
-			padding: 5px 10px;
-			outline: none;
-			border: 1px solid #000;
-		}
-	}
-}
-
-</style>

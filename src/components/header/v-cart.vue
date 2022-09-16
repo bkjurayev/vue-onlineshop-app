@@ -19,7 +19,9 @@
 					<p>{{item.title}} </p>
 					<p>{{item.price}}</p>
 				</div>
-				<div class="cart-header__btn">Delete</div>
+				<!-- <div class="cart-header__btn">
+					<img src="../../assets/img/icons/close.png" alt="">
+				</div> -->
 			</div>
 			<router-link to="/cart" class="cart-header__list__btn _btn-white">Checkout</router-link>
 		</div>
@@ -33,7 +35,8 @@ import { mapGetters, useStore } from 'vuex'
 	const store = useStore()
 
 	const isOpenCart = ref(false)
-   const products = computed(() => store.getters.getProductFromCart)
+	// const {removeFromCart} = store.commit(['removeFromCart'])
+	const products = computed(() => store.getters.getProductFromCart)
 	
 	const hideHandler = (event) => {
 		if (event?.keyCode == 27 || event.type == "click") {
@@ -50,19 +53,3 @@ import { mapGetters, useStore } from 'vuex'
 	});
 
 </script>
-
-
-<style lang="scss" scope>
-	.cart-header {
-		&__item {
-			display: flex;
-			align-items: center;
-		}
-		&__img {
-			max-width: 80px;
-			img {
-				width: 100%;
-			}
-		}
-	}	
-</style>
