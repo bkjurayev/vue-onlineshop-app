@@ -65,7 +65,7 @@ import useProducts from "../composables/products";
 import VModal from "@/components/modal/v-modal.vue";
 import VBreadcrumbs from "@/components/breadcrumbs/v-breadcrumbs.vue";
 
-const { isLoading, fetchProducts, products } = useProducts();
+const { isLoading, fetchProduct, product } = useProducts();
 
 const route = useRoute();
 const store = useStore();
@@ -76,15 +76,15 @@ const productSize = ref("");
 const slug = ref(route.params.slug);
  
 onMounted(() => {
-  fetchProducts();
+  fetchProduct(parseInt(slug.value));
 }); 
-console.log(slug.value);
-const product = computed(() => {
-  const res = []
-  res.push(products.value.filter(item => item.id == slug.value))
-  return [...res]
-});
-console.log(product.value);
+console.log(typeof slug.value);
+// const product = computed(() => {
+//   const res = []
+//   res.push(products.value.find(item => item.id == slug.value))
+//   return res
+//   return [...res]
+// });
 const productForCart = {};
 
 const closeModal = () => {
@@ -120,11 +120,11 @@ watch(
     }
   }
 );
-watch(
-  () => parseInt(route.params?.slug),
-  (newValue) => {
-    product.value = products.value.find((item) => item.id === newValue);
-  }
-);
+// watch(
+//   () => parseInt(route.params?.slug),
+//   (newValue) => {
+//     product.value = products.value.find((item) => item.id === newValue);
+//   }
+// );
 </script>
 

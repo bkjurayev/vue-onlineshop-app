@@ -5,6 +5,7 @@ import { readonly, ref } from "vue";
 const isLoading = ref(false);
 const isLoaded = ref(false);
 const products = ref([]);
+const product = ref([]);
 const productList = ref([
 	{
 		id: 0,		
@@ -521,10 +522,15 @@ const fetchProducts = () => {
   //   isLoaded.value = true
   // }).catch((reason) => error.value = reason)
 }
-
+const fetchProduct = (isSlugId) => {
+  isLoading.value = true
+  product.value = productList.value.find(item => item.id === isSlugId)
+}
 export default function useProducts() {
   return {
+			fetchProduct,
       fetchProducts,
+      product: readonly(product),
       products: readonly(products),
       isLoading: readonly(isLoading),
       isLoaded: readonly(isLoaded),
